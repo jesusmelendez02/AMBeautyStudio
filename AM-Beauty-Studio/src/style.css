@@ -1,0 +1,612 @@
+:root {
+  --clr-primary: #D7C5B7;
+  --clr-primary-dark: #D1B38F;
+
+  --clr-secondary: #D8D8CC;
+
+  --clr-neutral-light: #fefefe;
+  --clr-neutral: #382A21;
+  --clr-neutral-dark: #201D16;
+
+  --ff-primary: "Lato", serif;
+
+  --fw-regular: 400;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-200: 0.75rem;
+  --fs-300: 1rem;
+  --fs-400: 18px;
+  --fs-500: 20px;
+  --fs-600: 23px;
+  --fs-700: 26px;
+  --fs-800: 29px;
+  --fs-900: 33px;
+
+  --fs-body: var(--fs-300);
+  --fs-title: var(--fs-900);
+  --fs-subtitle: var(--fs-800);
+  --fs-heading: var(--fs-800);
+  --fs-subheading: var(--fs-700);
+  --fs-button: var(--fs-600);
+
+  --fs-card-title: var(--fs-700);
+
+
+
+}
+
+/* @media (min-width: 750px) {
+  :root {
+  --fs-200: 0.75rem;
+  --fs-300: 1rem;
+  --fs-400: 1.313rem;
+  --fs-500: 1.75rem;
+  --fs-600: 32px;
+  --fs-700: 38px;
+  --fs-800: 61px;
+  --fs-900: 72px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+  --fs-200: 0.75rem;
+  --fs-300: 1rem;
+  --fs-400: 1.313rem;
+  --fs-500: 1.75rem;
+  --fs-600: 32px;
+  --fs-700: 38px;
+  --fs-800: 61px;
+  --fs-900: 61px;
+  }
+} */
+
+@media (min-width: 1440px) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 23px;
+    --fs-500: 28px;
+    --fs-600: 34px;
+    --fs-700: 41px;
+    --fs-800: 49px;
+    --fs-900: 59px;
+  }
+}
+
+/* Reset styling */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Remove link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* button reset style */
+button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* smooth srolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* General styling */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+
+  overflow-x: hidden;
+}
+
+
+/* Utility classes */
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semiBold {
+  font-weight: var(--fw-semiBold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.text-neutralLight {
+  color: var(--clr-neutral-light);
+}
+
+.title {
+  font-weight: var(--fw-black);
+  font-size: var(--fs-title);
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-subtitle);
+  line-height: 1.25;
+}
+
+.heading {
+  font-size: var(--fs-heading);
+}
+
+.subheading {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-subheading);
+}
+
+@media (min-width: 1000px) {
+  .title {
+    line-height: .75;
+  }
+}
+
+/* Layout */
+
+.container {
+  --max-width: 1920px;
+  --padding: 1.25em;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.container-sm {
+  --max-width: 1920px;
+  --padding: 3.75em;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, 1.25rem);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.even-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25em;
+}
+
+.even-columns-3 {
+  gap: 1.25em;
+}
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+
+@media (min-width: 1000px) {
+  .container-sm {
+    --padding: 7.5em
+  }
+
+  .flex {
+    flex-wrap: nowrap;
+  }
+
+}
+
+
+.primaryColor-background {
+  background-color: var(--clr-primary);
+}
+
+.secondaryColor-background {
+  background-color: var(--clr-secondary);
+}
+
+.neutralColor-background {
+  background-color: var(--clr-neutral);
+}
+
+/* alignment */
+
+.space-between {
+  justify-content: space-between;
+}
+
+
+.text-align-center {
+  text-align: center;
+}
+
+/* Spacing */
+
+.flow-sm {
+  margin: 1.25rem auto;
+}
+
+.padding-block-40 {
+  padding-block: 1.25rem;
+}
+
+.padding-block-80 {
+  padding-block: 2.5rem;
+}
+
+.padding-block-120 {
+  padding-block: 3.75rem;
+}
+
+@media (min-width: 1000px) {
+  .padding-block-40 {
+    padding-block: 2.5rem;
+  }
+
+  .padding-block-80 {
+    padding-block: 5rem;
+  }
+
+  .padding-block-120 {
+    padding-block: 7.5rem;
+  }
+}
+
+
+/* Components */
+
+/* Header */
+
+/* logo */
+
+.logo {
+  position: absolute;
+  max-width: 25%;
+}
+
+.primary-navigation {
+  list-style: none;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .logo {
+    max-width: 45%;
+    position: static;
+  }
+
+
+  .primary-navigation {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    background: var(--clr-neutral-dark);
+
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation > * {
+    flex-direction: column;
+    color: var(--clr-neutral-light);
+    
+  }
+
+  .nav-link_border {
+    padding-block-end: .75rem;
+    border-bottom: solid 2px var(--clr-neutral-light);
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21"><path id="icon-menu-neutral-dark" d="M4.5,18h27M4.5,9h27M4.5,27h27" transform="translate(-3 -7.5)" fill="none" stroke="%23201d16" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2.25rem;
+    right: 1.25rem;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="22.243" height="22.243" viewBox="0 0 22.243 22.243"><path id="icon-close-neutral-light" d="M27,9,9,27M9,9,27,27" transform="translate(-6.879 -6.879)" fill="none" stroke="%23fefefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg>');
+  }
+}
+
+
+/* Button */
+
+.button {
+  --button-color: var(--clr-neutral-light);
+  --button-background: var(--clr-primary);
+
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 17px;
+  font-weight: var(--fw-bold);
+  color: var(--button-color);
+  background-color: var(--button-background);
+  border-radius: 5px;
+}
+
+.button-hero {
+  font-size: var(--fs-button);
+  color: var(--clr-neutral-light);
+  background-color: var(--clr-primary);
+  /* padding-block: .75rem 1rem;
+  padding-inline-start: 1.5rem; */
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  line-height: 1;
+}
+
+
+/* Card */
+
+.cards {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+  }
+}
+
+/* .overlay {
+  border-image:
+    linear-gradient(hsl(0 0% 100% / 0),
+      hsl(42 19% 11% / 0.75)) fill 1;
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1;
+  justify-content: flex-end;
+  background-size: cover;
+  border-image:
+    linear-gradient(hsl(0 0% 100% / 0),
+      hsl(42 19% 11% / 0.75)) fill 1;
+}
+
+/* Card Background */
+
+.card:nth-child(1) {
+  background-image: url("../assets/Service_wax_hair_removal.jpg");
+}
+
+.card:nth-child(2) {
+  background-image: url("../assets/Service_laser_IPL_SHR.jpg");
+  border-image: none;
+}
+
+.card:nth-child(3) {
+  background-image: url("../assets/Service_facial_treatments.jpg");
+}
+
+.card:nth-child(4) {
+  background-image: url("../assets/Service_brow_lamination.jpg");
+}
+
+.card:nth-child(5) {
+  background-image: url("../assets/Service_brow_henna_tint.jpg");
+}
+
+.card:nth-child(6) {
+  background-image: url("../assets/Service_lash_extensions.jpg");
+}
+
+.card:nth-child(7) {
+  background-image: url("../assets/Service_lash_lifting.jpg");
+}
+
+
+.card-content {
+  padding-inline-start: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--clr-neutral-light);
+}
+
+.card-title {
+  font-size: var(--fs-card-title);
+  max-width: 90%;
+  margin-bottom: .25rem;
+}
+
+.card-body {
+  max-width: 60%;
+}
+
+
+.card-content>a {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1000px) {
+  .card-content {
+    padding-inline-start: 1.25rem;
+    margin-bottom: 3.75rem;
+    color: var(--clr-neutral-light);
+  }
+}
+
+/* Hero Section */
+.hero-background {
+  background-color: var(--clr-neutral-light);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 3.75em;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+
+.bg-image {
+  background-image: url("../assets/Depilacion-con-cera.jpg");
+  padding-block: 100px;
+}
+
+/* Nosotros Section */
+
+.flex-container {
+  display: flex;
+  gap: 5rem;
+}
+
+@media (max-width: 1000px) {
+
+  .flex-container {
+    flex-wrap: wrap;
+  }
+
+}
+
+.flex-item {
+  /* flex: 1 1 0; */
+  align-self: flex-end;
+}
+
+.flex-item> :first-child {
+  margin-bottom: 1.25rem;
+}
+
+[data-name="icon-arrow-neutral-light"] {
+  stroke: var(--clr-neutral-light);
+}
+
+.line-height {
+  line-height: 1.75;
+}
