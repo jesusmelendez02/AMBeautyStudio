@@ -22,3 +22,22 @@ navLinks.forEach(link => {
         document.body.classList.remove("no-scroll"); // Allow scrolling again
     });
 });
+
+
+// Accordion
+
+const accordionItems = document.querySelectorAll(".accordion-item")
+
+accordionItems.forEach(accordionItem => {
+    accordionItem.addEventListener("click", () => {
+        const accordionToggle = accordionItem.querySelector(".accordion-toggle");
+        const isVisible = accordionItem.getAttribute("data-visible") === "true";
+
+        // Toggle accorxion visibility and aria-expanded attribute based on current state
+        accordionToggle.setAttribute("aria-expanded", !isVisible);
+        accordionItem.setAttribute("data-visible", !isVisible);
+
+
+        // accordionItem.classList.toggle("active");
+    });
+});
