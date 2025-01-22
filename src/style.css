@@ -216,7 +216,9 @@ body {
   color: var(--clr-neutral-light);
 }
 
-.text-neutral-dark {color: var(--clr-neutral-dark);}
+.text-neutral-dark {
+  color: var(--clr-neutral-dark);
+}
 
 .title {
   font-weight: var(--fw-black);
@@ -301,7 +303,7 @@ body {
   justify-content: space-between;
 }
 
-.flex-group > * {
+.flex-group>* {
   flex: 1;
 }
 
@@ -338,12 +340,12 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
   }
- 
-  .grow-items > * {
+
+  .grow-items>* {
     flex-basis: 100%;
   }
 
-  .width-50 > * {
+  .width-50>* {
     max-width: 75%;
   }
 }
@@ -508,6 +510,32 @@ body {
   }
 }
 
+
+/* Footer */
+
+.grid-footer {
+  display: grid;
+  gap: var(--gap, 3.75rem);
+}
+
+
+@media (min-width: 768px) {
+
+  .grid-footer {
+   grid-template-columns: repeat(2, 1fr);
+   
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  .grid-footer {
+   grid-template-columns: repeat(3, 1fr);
+   
+  }
+
+}
 
 /* Button */
 
@@ -707,38 +735,40 @@ body {
 
 
 /* Contact Form */
-.wrapper > form {
+
+
+.wrapper>form {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .form-group {
   position: relative;
   display: block;
-  margin-bottom: 1.75rem; 
+  margin-bottom: 1.75rem;
 }
-  
-  .form-group span {
-    position: absolute;
-    top: 11px;
-    transition: all .2s ease;
-    transform-origin: 0 0;
-    cursor: text; 
-  }
 
-  .form-group span.border {
-    height: 2px;
-    display: block;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 41px;
-    transform: scaleX(0);
-    transition: all .15s ease;
-    background: var(--clr-secondary); 
-  }
+.form-group span {
+  position: absolute;
+  top: 11px;
+  transition: all .2s ease;
+  transform-origin: 0 0;
+  cursor: text;
+}
+
+.form-group span.border {
+  height: 2px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 41px;
+  transform: scaleX(0);
+  transition: all .15s ease;
+  background: var(--clr-secondary);
+}
 
 .form-control {
   border: none;
@@ -750,25 +780,44 @@ body {
   background: none;
 }
 
-  .form-control:focus, .form-control:valid {
-    border-bottom: 2px solid var(--clr-neutral-light); }
-    .form-control:focus + span, .form-control:valid + span {
-      transform: translateY(-22px) scale(0.8); }
-      .form-control:focus + span + .border, .form-control:valid + span + .border {
-        transform: scaleX(1); }
+.form-control:focus,
+.form-control:valid {
+  border-bottom: 2px solid var(--clr-neutral-light);
+}
+
+.form-control:focus+span,
+.form-control:valid+span {
+  transform: translateY(-22px) scale(0.8);
+}
+
+.form-control:focus+span+.border,
+.form-control:valid+span+.border {
+  transform: scaleX(1);
+}
 
 textarea.form-control {
   padding-top: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   resize: none;
-  overflow: hidden; 
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 
 .form-control:focus {
-  outline: none; 
+  outline: none;
 }
 
+
+/* .wrapper > *{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-labels {
+  display: flex;
+  flex-direction: column;
+} */
 
 .button-form {
   --button-color: var(--clr-neutral);
@@ -833,7 +882,7 @@ textarea.form-control {
     margin-block-end: 5%
   }
 
-  .about-us-content > * {
+  .about-us-content>* {
     max-width: 60ch;
   }
 }
@@ -841,7 +890,7 @@ textarea.form-control {
 @media (min-width: 1200px) {
 
   .hero-background {
-    background-image: url("../assets/home_hero-desktop.jpg");  
+    background-image: url("../assets/home_hero-desktop.jpg");
   }
 
   .hero-content {
@@ -850,7 +899,7 @@ textarea.form-control {
 
   .about-us-background {
     background-image: url("../assets/about_us_hero.jpg");
-    
+
   }
 
   .about-us-content {
