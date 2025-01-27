@@ -631,6 +631,10 @@ body {
   background-image: url("../assets/Service_lash_lifting.jpg");
 }
 
+.card:nth-child(8) {
+  background-image: url("../assets/Service_men.jpg");
+}
+
 
 .card-content {
   padding-inline-start: 1.25rem;
